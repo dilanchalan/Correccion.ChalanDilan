@@ -1,9 +1,18 @@
-package CLASS;
+package dominio;
 
-public class punto {
+public class ClasePunto {
 
     private int x = 0;
     private int y = 0;
+    private int mover=0;
+
+    public int getMover() {
+        return mover;
+    }
+
+    public void setMover(int mover) {
+        this.mover = mover;
+    }
 
     public int getX() {
         return x;

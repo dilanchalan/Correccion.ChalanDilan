@@ -1,31 +1,27 @@
-package TEST;
+package test;
 
-import CLASS.punto;
+import dominio.ClasePunto;
 import java.util.Scanner;
 
-public class tespunto {
+public class PruebaPunto {
 
     public static void main(String[] args) {
-        punto p;
+        ClasePunto p;
         Scanner e = new Scanner(System.in);
         int a;
-        p = new punto();
+        p = new ClasePunto();
         do {
             System.out.println("------El punnto inicial esta ubicado en 0;0------");
             System.out.println("Regla: Los numeros ingresados solo pueden ser positivos incluido el 0");
             System.out.println("Que desea hacer:");
             System.out.println("1.-Mover al punto.");
-            System.out.println("2.-Mostrar la posicion del punto punto con respecto al punto 0;0.");
-            System.out.println("3.-Salir.");
+            System.out.println("2.-Salir.");
             a = e.nextInt();
             switch (a) {
                 case 1:
                     mover(p);
                     break;
                 case 2:
-                    mostrar(p);
-                    break;
-                case 3:
                     break;
                 default:
                     System.out.println("Opcion no valida.");
@@ -37,11 +33,11 @@ public class tespunto {
 
     }
 
-    public static void mover(punto p) {
+    public static void mover(ClasePunto p) {
         int x, y, a, b = 0, c, d, g = 0;
         double f;
         Scanner e = new Scanner(System.in);
-        System.out.println("Escriba el numero deveces que quiere moverle:");
+        System.out.println("Escriba el numero de veces que quiere moverle:");
         c = e.nextInt();
         do {
             a = 0;
@@ -54,8 +50,9 @@ public class tespunto {
             }
         } while (a != 1);
         do {
-            System.out.println("Escriba el numero de esapcios que quiere mover:");
+            System.out.println("Escriba el numero de espacios que quiere mover:");
             d = e.nextInt();
+            p.setMover(d);
             do {
                 a = 0;
                 if (d < 0) {
@@ -104,10 +101,9 @@ public class tespunto {
         } while (b != c);
         System.out.println("La distancia total que se ha movido es:");
         System.out.println(g);
-        System.out.println(f);
     }
 
-    public static void mostrar(punto p) {
+    public static void mostrar(ClasePunto p) {
         if (p.getX() == 0) {
             if (p.getY() == 0) {
                 System.out.println("El punto esta en la posicion." + p.mostrar() + "\nEL punto no se ha movido.");
